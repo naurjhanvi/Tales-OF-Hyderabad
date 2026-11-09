@@ -1,0 +1,151 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-veg: var(--veg);
+  --color-veg-foreground: var(--veg-foreground);
+  --color-nonveg: var(--nonveg);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.975 0.014 84);
+  --foreground: oklch(0.245 0.02 55);
+  --card: oklch(0.995 0.006 90);
+  --card-foreground: oklch(0.245 0.02 55);
+  --popover: oklch(0.995 0.006 90);
+  --popover-foreground: oklch(0.245 0.02 55);
+  --primary: oklch(0.545 0.185 29);
+  --primary-foreground: oklch(0.985 0.01 85);
+  --secondary: oklch(0.935 0.03 80);
+  --secondary-foreground: oklch(0.36 0.06 60);
+  --muted: oklch(0.945 0.014 82);
+  --muted-foreground: oklch(0.485 0.025 65);
+  --accent: oklch(0.83 0.115 78);
+  --accent-foreground: oklch(0.3 0.07 55);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0.01 85);
+  --border: oklch(0.905 0.02 80);
+  --input: oklch(0.905 0.02 80);
+  --ring: oklch(0.65 0.12 45);
+  --veg: oklch(0.55 0.14 150);
+  --veg-foreground: oklch(0.99 0.01 100);
+  --nonveg: oklch(0.52 0.14 35);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.admin-glass-theme {
+  color: #1e293b;
+  background:
+    radial-gradient(ellipse at 4% 0%, rgba(251, 191, 36, 0.13), transparent 32rem),
+    radial-gradient(ellipse at 96% 18%, rgba(190, 24, 93, 0.07), transparent 36rem),
+    linear-gradient(135deg, #faf9f7 0%, #f1f4f8 48%, #fbfaf8 100%) !important;
+}
+
+.admin-glass-theme [class*="bg-[#0b0f17]"],
+.admin-glass-theme [class*="bg-[#131a25]"],
+.admin-glass-theme [class*="bg-[#0c121c]"] {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.admin-glass-theme [class*="bg-white/"] {
+  background-color: rgba(255, 255, 255, 0.76) !important;
+}
+
+.admin-glass-theme [class*="bg-black/"] {
+  background-color: rgba(226, 232, 240, 0.64) !important;
+}
+
+.admin-glass-theme [class*="border-white/"] {
+  border-color: rgba(100, 116, 139, 0.2) !important;
+}
+
+.admin-glass-theme .text-white,
+.admin-glass-theme .text-slate-100 {
+  color: #172033 !important;
+}
+.admin-glass-theme .text-slate-200 {
+  color: #334155 !important;
+}
+.admin-glass-theme .text-slate-300 {
+  color: #475569 !important;
+}
+.admin-glass-theme .text-slate-400,
+.admin-glass-theme .text-slate-500 {
+  color: #64748b !important;
+}
+.admin-glass-theme .text-slate-600 {
+  color: #475569 !important;
+}
+.admin-glass-theme .text-amber-100,
+.admin-glass-theme .text-amber-200,
+.admin-glass-theme .text-amber-300 {
+  color: #a34a05 !important;
+}
+.admin-glass-theme .text-emerald-100,
+.admin-glass-theme .text-emerald-200 {
+  color: #047857 !important;
+}
+.admin-glass-theme .text-red-100,
+.admin-glass-theme .text-red-200 {
+  color: #b42318 !important;
+}
+.admin-glass-theme .text-sky-100,
+.admin-glass-theme .text-sky-200 {
+  color: #0369a1 !important;
+}
+
+.admin-glass-theme [class*="placeholder:text-slate-"]::placeholder {
+  color: #64748b !important;
+}
+
+.admin-glass-theme .recharts-cartesian-grid line {
+  stroke: rgba(100, 116, 139, 0.18) !important;
+}
+
+.admin-glass-theme .recharts-layer .recharts-text {
+  fill: #64748b !important;
+}
